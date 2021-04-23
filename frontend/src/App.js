@@ -1,12 +1,11 @@
-import './App.scss';
+import { MainLayout } from "./layout";
+import { Router } from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
-    </div>
+    <MainLayout>
+      <Router />
+    </MainLayout>
   );
 }
 
