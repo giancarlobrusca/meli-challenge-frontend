@@ -1,0 +1,33 @@
+@import "variables";
+
+form {
+  display: flex;
+  width: 100%;
+
+  input {
+    flex-grow: 1;
+    padding: $sm $md;
+    color: $offBlack;
+    font-size: $md;
+    border-radius: $xs 0 0 $xs;
+    border: none;
+    background-color: $white;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: $sm;
+    border-radius: 0 $xs $xs 0;
+    border: none;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+}

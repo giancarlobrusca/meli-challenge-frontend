@@ -1,0 +1,20 @@
+@import "variables";
+
+ul {
+  list-style: none;
+  font-size: 14px;
+
+  li {
+    display: inline;
+    color: $gray;
+
+    &:not(:last-child)::after {
+      content: ">";
+      margin: 0 $sm;
+    }
+
+    &:last-of-type {
+      font-weight: 600;
+    }
+  }
+}

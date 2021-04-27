@@ -1,0 +1,11 @@
+@import "variables";
+
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 $md;
+
+  main {
+    padding: $md 0;
+  }
+}
