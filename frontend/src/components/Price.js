@@ -4,7 +4,7 @@ export const Price = ({ priceInfo }) => {
   const { amount, decimals } = priceInfo;
 
   const integerAmount = parseFloat(amount);
-  const amountDecimals = getDecimals(amount, decimals);
+  const amountDecimals = getDecimals(integerAmount, decimals);
 
   return (
     <span>

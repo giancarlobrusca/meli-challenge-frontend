@@ -1,4 +1,3 @@
-export function getDecimals(number, decimals) {
-  const absoluteNumber = Math.abs(number);
-  return (absoluteNumber - Math.floor(absoluteNumber)).toFixed(decimals);
+export function getDecimals(integerNumber, decimals) {
+  return (integerNumber - Math.floor(integerNumber)).toFixed(decimals);
 }

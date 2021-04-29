@@ -10,7 +10,7 @@ exports.getItemData = async (req, res) => {
     `${config.apiMeli}/items/${itemId}/description`
   );
 
-  if (itemResponse.status === 200) {
+  if (itemResponse.status === 200 && itemDescription.status === 200) {
     const data = await itemResponse.json();
     const description = await itemDescription.json();
 
@@ -51,5 +51,7 @@ exports.getItemData = async (req, res) => {
     }
 
     res.status(200).json(objectReturn);
+  } else {
+    res.status(400).send("Bad Request");
   }
 };

@@ -14,7 +14,6 @@ export const SearchBar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
 
-    const searchValue = event.target.elements.search.value;
     const isItemId = searchValue.substring(0, 3) === "MLA";
 
     if (isItemId) {
@@ -36,7 +35,7 @@ export const SearchBar = () => {
         onChange={handleInputChange}
       />
       <button type="submit">
-        <img src={SearchIcon} alt="search-icon" />
+        <img src={SearchIcon} alt="Icono de Buscar" />
       </button>
     </form>
   );

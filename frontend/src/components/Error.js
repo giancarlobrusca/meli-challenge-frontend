@@ -6,7 +6,7 @@ export const Error = ({ message }) => {
     <div className="error">
       <img
         src="https://img.icons8.com/pastel-glyph/2x/error.png"
-        alt="Error Cat"
+        alt="Error Icon"
       />
       <h1>{message}</h1>
       <Link to="/">Volver a la Home</Link>

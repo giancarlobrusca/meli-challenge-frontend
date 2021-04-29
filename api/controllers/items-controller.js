@@ -7,19 +7,12 @@ exports.getItems = (req, res) => {
   fetch(`${config.apiMeli}/sites/MLA/search?q=${query}&limit=4`)
     .then((response) => response.json())
     .then((data) => {
-      const filtersPath = data.filters[0]?.values[0].path_from_root;
-      const categories = [];
-
-      if (filtersPath) {
-        filtersPath.forEach((category) => categories.push(category.name));
-      }
-
       const objectReturn = {
         author: {
           name: "Giancarlo",
           lastname: "Brusca",
         },
-        categories: categories,
+        categories: [],
         items: data.results.map((item) => ({
           id: item.id,
           title: item.title,
@@ -35,6 +28,17 @@ exports.getItems = (req, res) => {
         })),
       };
 
+      const filtersPath = data.filters[0]?.values[0].path_from_root;
+
+      if (filtersPath) {
+        filtersPath.forEach((category) =>
+          objectReturn.categories.push(category.name)
+        );
+      }
+
       res.status(200).json(objectReturn);
+    })
+    .catch((error) => {
+      res.status(400).send(error);
     });
 };
