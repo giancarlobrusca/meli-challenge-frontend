@@ -26,6 +26,7 @@ exports.getItems = (req, res) => {
           price: {
             currency: item.prices.presentation.display_currency,
             amount: item.price,
+            decimals: 0,
           },
           picture: item.thumbnail,
           condition: item.condition,

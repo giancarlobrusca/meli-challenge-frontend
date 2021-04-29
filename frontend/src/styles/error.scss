@@ -1,0 +1,24 @@
+@import "variables";
+
+.error {
+  text-align: center;
+  margin: $xl;
+
+  h1 {
+    font-weight: bold;
+    font-size: $xl;
+    margin: $sm 0 $xs;
+    color: $offBlack;
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray;
+    transition: font-size ease-in 0.2s;
+
+    &:hover {
+      font-size: 1.1rem;
+      filter: $hoverFilter;
+    }
+  }
+}

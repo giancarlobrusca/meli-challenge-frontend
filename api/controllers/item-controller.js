@@ -11,21 +11,28 @@ exports.getItemData = async (req, res) => {
   );
 
   if (itemResponse.status === 200) {
-    data = await itemResponse.json();
-    description = await itemDescription.json();
+    const data = await itemResponse.json();
+    const description = await itemDescription.json();
+
+    const itemCategories = await fetch(
+      `${config.apiMeli}/categories/${data.category_id}`
+    );
+
+    const categories = await itemCategories.json();
 
     const objectReturn = {
       author: {
         name: "Giancarlo",
         lastname: "Brusca",
       },
+      categories: [],
       item: {
         id: data.id,
         title: data.title,
         price: {
           currency: data.currency_id,
           amount: data.price,
-          decimals: data.decimal_places,
+          decimals: 2,
         },
         picture: data.pictures[0].url,
         condition: data.condition,
@@ -34,6 +41,14 @@ exports.getItemData = async (req, res) => {
         description: description.plain_text,
       },
     };
+
+    const hasCategories = categories.path_from_root;
+
+    if (hasCategories) {
+      categories.path_from_root.forEach((category) => {
+        objectReturn.categories.push(category.name);
+      });
+    }
 
     res.status(200).json(objectReturn);
   }

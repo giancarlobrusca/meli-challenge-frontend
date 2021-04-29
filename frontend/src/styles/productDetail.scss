@@ -2,6 +2,7 @@
 
 .product-detail {
   padding: $xl;
+  margin: $md 0;
   background-color: $white;
 
   .product-main {
@@ -33,9 +34,15 @@
         margin-bottom: $xl;
       }
 
-      p {
+      span {
         font-size: 46px;
         margin-bottom: $xl;
+
+        .price-decimals {
+          display: inline-block;
+          font-size: 0.6em;
+          transform: translateY(-0.4em);
+        }
       }
 
       button {
@@ -49,7 +56,7 @@
         background-color: #3483fa;
 
         &:hover {
-          filter: brightness(0.95);
+          filter: $hoverFilter;
         }
       }
     }

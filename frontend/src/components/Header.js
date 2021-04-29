@@ -1,9 +1,7 @@
-import React from "react";
+import MeliLogo from "../assets/logo-meli.png";
+import { Wrapper, SearchBar } from "./";
 import { Link } from "react-router-dom";
-import { Wrapper } from "../Wrapper";
-import { SearchBar } from "./SearchBar";
-import MeliLogo from "../../assets/logo-meli-sm.png";
-import "../../styles/header.scss";
+import "../styles/header.scss";
 
 export const Header = () => {
   return (

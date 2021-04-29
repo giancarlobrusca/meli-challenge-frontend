@@ -4,11 +4,13 @@ form {
   display: flex;
   width: 100%;
 
-  input {
+  > input {
     flex-grow: 1;
     padding: $sm $md;
     color: $offBlack;
-    font-size: $md;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 300;
     border-radius: $xs 0 0 $xs;
     border: none;
     background-color: $white;
@@ -18,7 +20,7 @@ form {
     }
   }
 
-  button {
+  > button {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -27,7 +29,11 @@ form {
     border: none;
 
     &:hover {
-      background-color: $gray;
+      filter: $hoverFilter;
+    }
+
+    img {
+      height: $md;
     }
   }
 }

@@ -1,6 +1,7 @@
+import FreeShippingIcon from "../assets/ic_shipping.png";
 import { Link } from "react-router-dom";
-import FreeShippingIcon from "../../assets/ic_shipping.png";
-import "../../styles/productItem.scss";
+import { Price } from "./";
+import "../styles/productItem.scss";
 
 export const ProductItem = ({ product }) => {
   return (
@@ -10,7 +11,7 @@ export const ProductItem = ({ product }) => {
       </Link>
       <div className="product-info">
         <div className="product-price">
-          <p>{`$ ${product.price.amount}`}</p>
+          <Price priceInfo={product.price} />
           {product.free_shipping && (
             <img src={FreeShippingIcon} alt="Envío gratis" />
           )}

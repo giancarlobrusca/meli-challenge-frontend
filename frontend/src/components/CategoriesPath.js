@@ -1,4 +1,4 @@
-import "../../styles/categoriesPath.scss";
+import "../styles/categoriesPath.scss";
 
 export const CategoriesPath = ({ categories }) => {
   return (

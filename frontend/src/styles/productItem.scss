@@ -40,11 +40,20 @@ article {
       align-items: center;
       gap: $sm;
       font-size: $xl;
+      font-weight: 400;
+
+      img {
+        height: $lg;
+      }
     }
 
     .product-title {
       color: $offBlack;
       font-size: 18px;
+
+      h1 {
+        font-weight: 300;
+      }
     }
   }
 
